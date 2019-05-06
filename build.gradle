@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+    flatDir {
+        dirs 'lib'
+    }
+}
+
+dependencies {
+    implementation 'com.simianquant:mathbridge_2.12:0.2.3'
+    compile fileTree(dir: 'lib', include: '*.jar') 
+    testImplementation 'org.testng:testng:6.14.3'
+}
+
+mainClassName = 'com.simianquant.sample.Sample'
+
+test {
+    useTestNG()
+}
